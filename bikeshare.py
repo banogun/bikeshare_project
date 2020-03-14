@@ -128,9 +128,12 @@ def user_statistic(df): #USER DATA
     print_pause('The number users by {}'.format(df.groupby(['Gender'])['Gender'].count()))
 
     #earliest, most recent and most common year of birth
-    print_pause('The youngest user was born in {}'.format(df['Birth Year'].max()))
-    print_pause('The oldest user was born in {}'.format(df['Birth Year'].min()))
-    print_pause('The most popular birth year of our users is {}'.format(df['Birth Year'].mode()[0]))
+    if city_name == 'washington'
+        continue
+    else:
+        print_pause('The youngest user was born in {}'.format(df['Birth Year'].max()))
+        print_pause('The oldest user was born in {}'.format(df['Birth Year'].min()))
+        print_pause('The most popular birth year of our users is {}'.format(df['Birth Year'].mode()[0]))
 
     print('')
     print_pause('~'*50)
