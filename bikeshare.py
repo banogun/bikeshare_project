@@ -125,7 +125,7 @@ def user_statistic(df): #USER DATA
     print_pause('The number users: {}'.format(df['User Type'].count()))
 
     #number of users per Gender
-    print_pause('The number users: {}'.format(df['User Type'].groupby(['Gender'])['Gender'].count())
+    print_pause('The number users by {}'.format(df.groupby(['Gender'])['Gender'].count()))
 
     #earliest, most recent and most common year of birth
     print_pause('The youngest user was born in {}'.format(df['Birth Year'].max()))
@@ -136,7 +136,7 @@ def user_statistic(df): #USER DATA
     print_pause('~'*50)
 
 
-def raw_data(df):
+def raw_data(df): #select raw data
     start = 0
     stop = 5
     data_request = input('Do you want to see the first 5 rows of raw data? Y / N ').upper()
@@ -158,7 +158,7 @@ def restart():
     if restart_question == 'Y':
         main()
     elif restart_question == 'N':
-        print('See you later')
+        print('\nSee you later\n')
     else:
         restart()
 
