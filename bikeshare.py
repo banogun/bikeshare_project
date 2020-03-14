@@ -124,11 +124,10 @@ def user_statistic(df, city_name): #USER DATA
     #number of users
     print_pause('The number users: {}'.format(df['User Type'].count()))
 
-    for city in city_name:
-        if city_name == 'washington':
-            continue
-
-        #number of users per Gender
+    if city_name == 'washington':
+        print('The Washington database does not have the Birth Year & Gender fields.')
+    else:
+        #number of users per Genden
         print_pause('The number users by {}'.format(df.groupby(['Gender'])['Gender'].count()))
 
         #earliest, most recent and most common year of birth
