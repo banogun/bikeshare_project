@@ -117,20 +117,21 @@ def trip_duration_statistics(df): #CALCULATING TRIP STATISTIC
     print_pause('~'*50)
 
 
-def user_statistic(df): #USER DATA
+def user_statistic(df, city_name): #USER DATA
 
     print_pause('\nCalculating user statistics\n')
 
     #number of users
     print_pause('The number users: {}'.format(df['User Type'].count()))
 
-    #number of users per Gender
-    print_pause('The number users by {}'.format(df.groupby(['Gender'])['Gender'].count()))
+    for city in city_name:
+        if city_name == 'washington':
+            continue
 
-    #earliest, most recent and most common year of birth
-    if city_name == 'washington'
-        continue
-    else:
+        #number of users per Gender
+        print_pause('The number users by {}'.format(df.groupby(['Gender'])['Gender'].count()))
+
+        #earliest, most recent and most common year of birth
         print_pause('The youngest user was born in {}'.format(df['Birth Year'].max()))
         print_pause('The oldest user was born in {}'.format(df['Birth Year'].min()))
         print_pause('The most popular birth year of our users is {}'.format(df['Birth Year'].mode()[0]))
@@ -174,7 +175,7 @@ def main():
         time_statistics(df)
         station_statistic(df)
         trip_duration_statistics(df)
-        user_statistic(df)
+        user_statistic(df, city_name)
         raw_data(df)
         restart()
     except IndexError:
