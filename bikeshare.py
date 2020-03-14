@@ -125,7 +125,7 @@ def user_statistic(df): #USER DATA
     print_pause('The number users: {}'.format(df['User Type'].count()))
 
     #number of users per Gender
-    print_pause('The number users: {}'.format(df['User Type'].count()))
+    print_pause('The number users: {}'.format(df['User Type'].groupby(['Gender'])['Gender'].count())
 
     #earliest, most recent and most common year of birth
     print_pause('The youngest user was born in {}'.format(df['Birth Year'].max()))
