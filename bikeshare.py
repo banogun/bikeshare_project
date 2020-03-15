@@ -61,8 +61,10 @@ def load_data(city_name, month, day): #LOADING DATA FOR SPECIFIED CITY FILTER
     df['hour'] = df['Start Time'].dt.hour
     df['station_combo'] = df['Start Station'] + (' to ') + df['End Station']
 
-    if month != 'All' and day != 'All':
+    if month != 'All':
         df = df[df['month'] == int(month)]
+
+    if day != 'All':
         df = df[df['day_of_week'] == day]
 
     return(df)
