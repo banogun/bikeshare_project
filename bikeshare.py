@@ -30,11 +30,6 @@ def get_filter(): #COLLECTING USER INPUT
     if city_name in city_data:
         print_pause('\nYou have selected {}'.format(city_name).title())
 
-    day = input('\nPlease name the day to filter by, or \'all\' to apply no day filter.\n').title()
-    while day not in days:
-        day = input('\nPlease select the day of the week that you would like filter by or \'all\' to apply no day filter.\n').title()
-    if day in days:
-        print_pause('\nYou have selected {}'.format(day))
 
     month = input('\nPlease name the month to filter by, or \'all\' to apply no month filter.'
     '\nPLEASE ENTER THE MONTH IN NUMBER FORMAT (FOR EXAMPLE 1 FOR January)\n').title()
@@ -42,6 +37,13 @@ def get_filter(): #COLLECTING USER INPUT
         month = input('\nPlease select the month in number format that you would like to filter by or \'all\' to apply no  month filter\n').title()
     if month in months:
         print_pause('\nYou have selected {}'.format(month))
+
+
+    day = input('\nPlease name the day to filter by, or \'all\' to apply no day filter.\n').title()
+    while day not in days:
+        day = input('\nPlease select the day of the week that you would like filter by or \'all\' to apply no day filter.\n').title()
+    if day in days:
+        print_pause('\nYou have selected {}'.format(day))
 
     return city_name, month, day
 
