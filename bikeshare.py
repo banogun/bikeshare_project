@@ -125,7 +125,7 @@ def user_statistic(df, city_name): #USER DATA
     print_pause('The number users: {}'.format(df['User Type'].count()))
 
     if city_name == 'washington':
-        print('The Washington database does not have the Birth Year & Gender fields.')
+        print('The Washington database does not have the \'Birth Year\' & \'Gender\' fields in its database.')
     else:
         #number of users per Genden
         print_pause('The number users by {}'.format(df.groupby(['Gender'])['Gender'].count()))
