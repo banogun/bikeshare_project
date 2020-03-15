@@ -145,15 +145,16 @@ def raw_data(df): #select raw data
     start = 0
     stop = 5
     data_request = input('Do you want to see the first 5 rows of raw data? Y / N ').upper()
-    while data_request != 'Y' or data_request != 'N':
-        data_request = input('Please enter \'Y\' or \'N\' ').upper()
-        if data_request == 'N':
-            break
-        while data_request == 'Y':
-            print(df.iloc[start : stop])
-            data_request = input('Do you want to see the next 5 rows of raw data? Y / N ').upper()
+    while data_request == 'Y':
+        print(df.iloc[start : stop])
+        data_request = input('Do you want to see the next 5 rows of raw data? Y / N ').upper()
+        if data_request == 'Y':
             start += 5
             stop += 5
+        elif data_request == 'N':
+            break
+        else:
+            data_request = input('Please enter \'Y\' or \'N\' ').upper()
             if data_request == 'N':
                 break
 
